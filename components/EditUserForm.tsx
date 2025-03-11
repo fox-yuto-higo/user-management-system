@@ -68,7 +68,9 @@ const EditUserForm: React.FC<EditUserFormProps> = ({
                 if (onError) onError(err);
             }
         };
-    }, []);
+
+        fetchUser();
+    }, [userId]);
 
 
 
@@ -97,7 +99,7 @@ const EditUserForm: React.FC<EditUserFormProps> = ({
             <form onSubmit={handleSubmit(onSubmit)}>
                 <TextField
                     fullWidth
-                    label="名前"
+                    //label="名前"
                     {...register("name", { required: "名前は必須です。" })}
                     error={!!errors.name}
                     helperText={errors.name?.message}
@@ -105,7 +107,7 @@ const EditUserForm: React.FC<EditUserFormProps> = ({
                 />
                 <TextField
                     fullWidth
-                    label="メールアドレス"
+                    //label="メールアドレス"
                     type="email"
                     {...register("email", { required: "メールアドレスは必須です。" })}
                     error={!!errors.email}
@@ -114,7 +116,7 @@ const EditUserForm: React.FC<EditUserFormProps> = ({
                 />
                 <TextField
                     fullWidth
-                    label="役割"
+                    //label="役割"
                     {...register("role", { required: "役割は必須です。" })}
                     error={!!errors.role}
                     helperText={errors.role?.message}

@@ -20,4 +20,4 @@ const UserList: React.FC<UserListProps> = ({ users }) => {
         </Box>
     )
 }
-export default UserList
+export default UserList;

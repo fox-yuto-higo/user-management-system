@@ -1,14 +1,9 @@
 import React from "react";
 import UserCard from "./UserCard";
 import { Box, Typography } from '@mui/material'
+import {User} from "../types/User"
 
-interface User {
-    id: number;
-    name: string;
-    email: string;
-    role: string;
-    deleted: boolean;
-}
+
 interface UserListProps {
     users: User[];
 }

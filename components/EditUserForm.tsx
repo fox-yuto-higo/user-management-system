@@ -58,7 +58,7 @@ const EditUserForm: React.FC<EditUserFormProps> = ({
                 if(fetchUser){
                 setValue("name", fetchUser.name)
                 setValue("email", fetchUser.email)
-                setValue("role", fetchUser.email)
+                setValue("role", fetchUser.role)
                 } else{
                     setError("ユーザーが見つかりません")
                 }

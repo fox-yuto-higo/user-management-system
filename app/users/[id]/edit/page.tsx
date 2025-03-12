@@ -21,7 +21,6 @@ const EditUserPage: React.FC = () => {
     return <Typography>ユーザーIDが無効です。</Typography>;
   }
 
-
   return (
     <Box sx={{ mt: 4 }}>
       <Typography variant="h4" gutterBottom>

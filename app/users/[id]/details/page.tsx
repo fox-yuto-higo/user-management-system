@@ -8,18 +8,15 @@ import { useRouter } from 'next/navigation';
 import { User } from "../../../../types/User"
 import { fetchUserById } from "../../../../utils/api";
 
-
 const UserDetailsPage: React.FC = () => {
 
     const router = useRouter();
     const id = useParams().id;
 
-
     // ユーザーIDが取得できていない場合はnullを返す
     if (!id || Array.isArray(id)) {
         return <Typography>ユーザーIDが無効です。</Typography>;
     }
-
 
     const [error, setError] = React.useState<string | null>(null);
     const [fetchedUser, setFetchedUser] = useState<User>();
@@ -41,10 +38,6 @@ const UserDetailsPage: React.FC = () => {
         fetchUser();
     }, [id]);
 
-
-
-
-
     return (
         <Box sx={{ mt: 4 }}>
             <Typography variant="h4" gutterBottom>
@@ -52,7 +45,7 @@ const UserDetailsPage: React.FC = () => {
             </Typography>
             {fetchedUser && (
                 <UserDitals user={fetchedUser} />
-            ) 
+            )
             }
         </Box>
     );

@@ -4,13 +4,11 @@ import React, { useEffect, useState } from "react";
 import UserDitals from "../../../../components/UserDetails"
 import { useParams } from "next/navigation";
 import { Typography, Box } from "@mui/material";
-import { useRouter } from 'next/navigation';
 import { User } from "../../../../types/User"
 import { fetchUserById } from "../../../../utils/api";
 
 const UserDetailsPage: React.FC = () => {
 
-    const router = useRouter();
     const id = useParams().id;
 
     // ユーザーIDが取得できていない場合はnullを返す

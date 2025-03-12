@@ -37,7 +37,7 @@ const UsersPage: React.FC = () => {
   }
 
   return (
-    <UserList users={users} />
+    <UserList initialUsers={users} />
   );
 }
 

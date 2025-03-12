@@ -19,7 +19,7 @@ type Story = StoryObj<typeof UserList>;
 
 export const Default: Story = {
     args: {
-        users: [ // 複数のユーザーを適切にリスト化
+      initialUsers: [ // 複数のユーザーを適切にリスト化
           {
             id: 1,
             name: '山田 太郎',

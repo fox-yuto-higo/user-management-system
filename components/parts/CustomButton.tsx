@@ -21,4 +21,4 @@ const CustomButton: React.FC<CustomButtonProps> = ({ variantType = 'primary', ..
   )
 }
 
-export default CustomButton;
+export default CustomButton

@@ -25,25 +25,7 @@ interface UserDetailsProps {
 const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
 
 
-    const [error, setError] = React.useState<string | null>(null);
-    const [fetchedUser, setFetchedUser] = useState<User | null>(null);
-
-    useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const fetchUser: User | null = await fetchUserById(user.id);
-                if (fetchUser) {
-                    setFetchedUser(fetchUser);
-                } else {
-                    setError("ユーザーが見つかりません")
-                }
-            } catch (err) {
-                setError("ユーザー情報の取得に失敗しました。" + err);
-            }
-        };
-
-        fetchUser();
-    }, [user.id]);
+    
 
 
 
@@ -54,10 +36,7 @@ const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
                 ユーザー詳細
             </Typography>
 
-            {error && <Alert severity="error">{error}</Alert>}
-            {!user ? (
-                <CircularProgress />
-            ) : (
+            
                 <>
                     <Typography variant="body1" gutterBottom>
                         <strong>ID:</strong> {user.id}
@@ -73,7 +52,6 @@ const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
                         <strong>役職:</strong> {user.role}
                     </Typography>
                 </>
-            )}
         </Box>
     );
 };

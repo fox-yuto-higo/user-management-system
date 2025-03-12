@@ -55,25 +55,27 @@ const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
             </Typography>
 
             {error && <Alert severity="error">{error}</Alert>}
-            {!fetchedUser ? (
+            {!user ? (
                 <CircularProgress />
             ) : (
                 <>
                     <Typography variant="body1" gutterBottom>
-                        <strong>ID:</strong> {fetchedUser.id}
+                        <strong>ID:</strong> {user.id}
                     </Typography>
 
                     <Typography variant="body1" gutterBottom>
-                        <strong>名前:</strong> {fetchedUser.name}
+                        <strong>名前:</strong> {user.name}
                     </Typography>
                     <Typography variant="body1" gutterBottom>
-                        <strong>メール:</strong> {fetchedUser.email}
+                        <strong>メール:</strong> {user.email}
                     </Typography>
                     <Typography variant="body1" gutterBottom>
-                        <strong>役職:</strong> {fetchedUser.role}
+                        <strong>役職:</strong> {user.role}
                     </Typography>
                 </>
             )}
         </Box>
     );
 };
+
+export default UserDetails

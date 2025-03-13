@@ -1,34 +1,43 @@
 import React, { useState } from "react";
-import UserCard from "./UserCard";
-import { Box, Typography } from '@mui/material'
-import {User} from "../types/User"
-
+import { Box, Typography, Button } from "@mui/material";
+import { User } from "../types/User";
+import CustomCard from "./parts/CustomCard";
+import  Link  from 'next/link';
+import DeleteUserButton from "./DeleteUserButton";
 
 interface UserListProps {
     initialUsers: User[];
-
 }
 
 const UserList: React.FC<UserListProps> = ({ initialUsers }) => {
+    const [users, setUsers] = useState<User[]>(initialUsers);
 
-    const [users,setUsers] = useState<User[]>(initialUsers);
+    const handleDelete = (deleteUserId: number) => {
+        const filterUser = users.filter(user => user.id !== deleteUserId);
+        setUsers(filterUser);
+    };
 
-    const handleDelete = (deleteUserId: number) =>{
-       const filterUser = initialUsers.filter(user =>
-        user.id != deleteUserId);
-       setUsers(filterUser);
-    }
-
-
-    return(
+    return (
         <Box>
             <Typography variant="h4" gutterBottom>
                 ユーザー一覧
             </Typography>
             {users.map(user => (
-                <UserCard key={user.id} user={user} onDelete={handleDelete}/>
+                <CustomCard
+                    key={user.id}
+                    title={user.name}
+                    description={`役割: ${user.role}\n${user.email}`}
+                    actions={
+                        <>
+                            <Button size="small" component={Link} href={`/users/${user.id}/edit`}>編集</Button>
+                            <Button size="small" component={Link} href={`/users/${user.id}/details`}>ユーザー詳細</Button>
+                            <DeleteUserButton userId={user.id} onDelete={handleDelete} />
+                        </>
+                    }
+                />
             ))}
         </Box>
-    )
-}
+    );
+};
+
 export default UserList;

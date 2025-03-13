@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent, Typography, CardActions, Avatar, Box} from "@mui/material";
 
 interface CustomCardProps {
+    backgroundColor: string;
     title: string;
     description: string;
     actions?: React.ReactNode;
@@ -9,13 +10,14 @@ interface CustomCardProps {
 }
 
 const CustomCard: React.FC<CustomCardProps> = ({
+    backgroundColor = "white",
     title,
     description,
     actions,
     imageUrl,
 }) => {
     return (
-        <Card sx={{ minWidth: 275, mb: 2 }}>
+        <Card sx={{ minWidth: 275, mb: 2, backgroundColor}}>
             <CardContent>
                 <Box display="flex" alignItems="center" mb={2}>
                     {imageUrl && (

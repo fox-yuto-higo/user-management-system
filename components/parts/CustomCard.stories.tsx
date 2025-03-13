@@ -15,6 +15,7 @@ type Story = StoryObj<typeof CustomCard>
 
 export const Default: Story = {
   args: {
+    imageUrl:"https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_2.png",
     title: "カードタイトル",
     description: "これはカスタムカードの説明です。",
     actions: (
@@ -28,6 +29,7 @@ export const Default: Story = {
 
 export const WithoutActions: Story = {
   args: {
+    imageUrl:"https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_2.png",
     title: "アクションなしのカード",
     description: "アクションが含まれていないカードの説明。",
   },

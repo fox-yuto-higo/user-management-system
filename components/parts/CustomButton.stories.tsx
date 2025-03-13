@@ -31,3 +31,21 @@ export const Danger: Story = {
     children: "Danger Button",
   },
 };
+export const warning: Story = {
+  args: {
+    variantType: "warning",
+    children: "Warning Button",
+  },
+};
+export const info: Story = {
+  args: {
+    variantType: "info",
+    children: "Info Button",
+  },
+};
+export const success: Story = {
+  args: {
+    variantType: "info",
+    children: "Success Button",
+  },
+};

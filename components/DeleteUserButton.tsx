@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { hideUser } from "../utils/api"; // hideUser関数のインポート
 import { Button } from "@mui/material";
-
+import CustomButton from "@/components/parts/CustomButton";
 
 interface DeleteUserButtonProps {
     userId: number;
@@ -25,9 +25,9 @@ const DeleteUserButton: React.FC<DeleteUserButtonProps> = ({ userId, onDelete })
 
     return (
         <div>
-            <Button onClick={handleHideUser} size="small" color="error">
+            <CustomButton onClick={handleHideUser} size="small" variantType="danger">
                 ユーザーを削除
-            </Button>
+            </CustomButton>
             {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
     )

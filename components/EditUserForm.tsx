@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import { fetchUserById, updateUser } from "../utils/api";
 import { User } from "../types/User";
-import { useRouter } from "next/navigation";
 
 // 必要に応じて利用する
 interface EditUserFormInputs {
@@ -27,9 +26,6 @@ interface EditUserFormProps {
     onError?: (error: any) => void;
     disabled?: boolean;
 }
-
-
-
 
 // TODO: ユーザー編集フォームコンポーネントを実装する
 const EditUserForm: React.FC<EditUserFormProps> = ({
@@ -71,8 +67,6 @@ const EditUserForm: React.FC<EditUserFormProps> = ({
 
         fetchUser();
     }, [userId]);
-
-
 
     const onSubmit: SubmitHandler<EditUserFormInputs> = async (data) => {
         try {

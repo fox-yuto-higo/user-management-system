@@ -16,8 +16,6 @@ const CustomButton: React.FC<CustomButtonProps> = ({ variantType = 'primary', ..
     setTimeout(() => setClicked(false), 300);
   }
 
-
-
   let color: ButtonProps['color'] = 'primary';
 
   if (variantType === 'secondary') {

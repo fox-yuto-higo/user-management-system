@@ -5,6 +5,7 @@ import CustomCard from "./parts/CustomCard";
 import  Link  from 'next/link';
 import DeleteUserButton from "./DeleteUserButton";
 
+
 interface UserListProps {
     initialUsers: User[];
 }
@@ -25,7 +26,7 @@ const UserList: React.FC<UserListProps> = ({ initialUsers }) => {
             {users.map(user => (
                 <CustomCard
                     key={user.id}
-                    backgroundColor="lavender"
+                    backgroundColor="snow"
                     imageUrl={"https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_2.png"}
                     title={user.name}
                     description={`役割: ${user.role}\n${user.email}`}

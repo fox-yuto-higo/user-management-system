@@ -14,12 +14,12 @@ const DeleteUserButton: React.FC<DeleteUserButtonProps> = ({ userId, onDelete })
 
     const handleHideUser = async () => {
         setError(null);
-            try {
-                await hideUser(userId);
-                onDelete(userId);
-            } catch (err) {
-                setError("ユーザーの削除に失敗しました");
-            }
+        try {
+            await hideUser(userId);
+            onDelete(userId);
+        } catch (err) {
+            setError("ユーザーの削除に失敗しました");
+        }
     };
 
     return (

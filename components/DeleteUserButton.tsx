@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { hideUser } from "../utils/api"; // hideUser関数のインポート
-import { Button } from "@mui/material";
 import CustomButton from "@/components/parts/CustomButton";
 
 interface DeleteUserButtonProps {

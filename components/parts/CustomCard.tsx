@@ -2,9 +2,9 @@ import React from "react";
 import { Card, CardContent, Typography, CardActions } from "@mui/material";
 
 interface CustomCardProps {
-    actions?: React.ReactNode;
     title: string;
     description: string;
+    actions?: React.ReactNode;
 }
 
 const CustomCard: React.FC<CustomCardProps> = ({

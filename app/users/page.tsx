@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchUsers } from '../../utils/api';
 import { User } from '../../types/User';
-import { Typography, CircularProgress, Alert } from '@mui/material';
+import { CircularProgress, Alert } from '@mui/material';
 import UserList from '../../components/UserList'
 
 const UsersPage: React.FC = () => {

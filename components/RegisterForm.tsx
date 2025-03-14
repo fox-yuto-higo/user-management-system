@@ -7,13 +7,11 @@ interface RegisterFormInputs {
   email: string;
   role: string;
 }
-// 成功後のリダイレクトなどを行う場合
 interface RegisterFormProps {
   onSuccess?: () => void;
   onError?: (error: any) => void;
   disabled?: boolean;
 }
-// TODO: 新規登録フォームコンポーネントを実装する
 const RegisterForm: React.FC<RegisterFormProps> = ({
   onSuccess,
   onError,
@@ -41,7 +39,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
     }
   };
   return (
-    <Box sx={{ maxWidth: 400, mx: "auto", mt: 4 }}>
+    <Box sx={{ maxWidth: 400, mx: "auto", mt: 4, backgroundColor:"#f5f5c5", padding: 3, borderRadius: 2,}}>
       <Typography variant="h5" gutterBottom>
         新規登録
       </Typography>

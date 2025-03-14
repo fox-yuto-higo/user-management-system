@@ -33,7 +33,8 @@ const fadein = keyframes`
 `;
 
 const AnimatedModal = styled(Modal)`
-  animation: ${fadein} 1.0s ease-out;
+  animation: ${fadein} 0.7s ease-out;
+  backdrop-filter: blur(5px);
 `;
 
 const CustomModal: React.FC<CustomModalProps> = ({

@@ -11,7 +11,6 @@ const UserDetailsPage: React.FC = () => {
 
     const id = useParams().id;
 
-    // ユーザーIDが取得できていない場合はnullを返す
     if (!id || Array.isArray(id)) {
         return <Typography>ユーザーIDが無効です。</Typography>;
     }
@@ -39,7 +38,7 @@ const UserDetailsPage: React.FC = () => {
     return (
         <Box sx={{ mt: 4 }}>
             <Typography variant="h4" gutterBottom>
-                ユーザー編集
+                ユーザー詳細
             </Typography>
             {fetchedUser && (
                 <UserDitals user={fetchedUser} />

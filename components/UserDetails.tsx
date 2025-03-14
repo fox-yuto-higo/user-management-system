@@ -1,45 +1,46 @@
-"use client"; // クライアントコンポーネントとしてマーク
+"use client"; 
 
-import React, { useEffect, useState } from "react";
-import {
-    TextField,
-    Button,
-    Box,
-    Typography,
-    Alert,
-    CircularProgress,
-} from "@mui/material";
-import { fetchUserById } from "../utils/api";
+import React from "react";
+import { Box, Typography, Paper, Grid } from "@mui/material";
 import { User } from "../types/User";
-import { useRouter } from "next/navigation";
+import {Email, Person } from "@mui/icons-material"; 
+import CatchingPokemonSharpIcon from '@mui/icons-material/CatchingPokemonSharp';
+import WorkSharpIcon from '@mui/icons-material/WorkSharp';
 
-
-// 必要に応じて利用する
 interface UserDetailsProps {
     user: User;
 }
 
-const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
-
-    return (
-        <Box sx={{ maxWidth: 400, mx: "auto", mt: 4 }}>
-            <Typography variant="h5" gutterBottom>
+const UserDetails: React.FC<UserDetailsProps> = ({ user }) => (
+    <Box sx={{ maxWidth: 600, mx: "auto", mt: 4 }}>
+        <Paper sx={{ padding: 3, borderRadius: 2, boxShadow: 3 }}>
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
                 ユーザー詳細
             </Typography>
-            <Typography variant="body1" gutterBottom>
-                <strong>ID:</strong> {user.id}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-                <strong>名前:</strong> {user.name}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-                <strong>メール:</strong> {user.email}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-                <strong>役職:</strong> {user.role}
-            </Typography>
-        </Box>
-    );
-};
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                    <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center' }}>
+                        <CatchingPokemonSharpIcon sx={{ mr: 1 }} /> <strong>ID:</strong> {user.id}
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center' }}>
+                        <Person sx={{ mr: 1 }} /> <strong>名前:</strong> {user.name}
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center' }}>
+                        <Email sx={{ mr: 1 }} /> <strong>メール:</strong> {user.email}
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center' }}>
+                        <WorkSharpIcon sx={{ mr: 1 }} /> <strong>役職:</strong> {user.role}
+                    </Typography>
+                </Grid>
+            </Grid>
+        </Paper>
+    </Box>
+);
 
-export default UserDetails
+export default UserDetails;

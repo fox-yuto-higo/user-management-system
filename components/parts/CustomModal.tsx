@@ -1,5 +1,7 @@
 import React from "react";
-import { Modal, Box, Typography, Button } from "@mui/material";
+import { Modal, Box, Typography, Button} from "@mui/material";
+import { keyframes } from "@emotion/react";
+import { styled } from "@mui/system"; 
 
 const style = {
   position: "absolute" as const,
@@ -21,6 +23,19 @@ interface CustomModalProps {
     onConfirm?: () => void;
 }
 
+const fadein = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const AnimatedModal = styled(Modal)`
+  animation: ${fadein} 1.0s ease-out;
+`;
+
 const CustomModal: React.FC<CustomModalProps> = ({
     open,
     title,
@@ -28,10 +43,9 @@ const CustomModal: React.FC<CustomModalProps> = ({
     onClose,
     onConfirm,
 }
-
 ) => {
   return (
-    <Modal open={open} onClose={onClose}>
+    <AnimatedModal open={open} onClose={onClose}>
       <Box sx={style}>
         <Typography variant="h6" component="h2" gutterBottom>
           {title}
@@ -48,7 +62,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
           )}
         </Box>
       </Box>
-    </Modal>
+    </AnimatedModal>
   );
 };
 

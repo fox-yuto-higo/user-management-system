@@ -32,10 +32,10 @@ const EditUserPage: React.FC = () => {
     <Box
       sx={{
         mt: 6,
-        backgroundImage: 'url(https://www.pakutaso.com/shared/img/thumb/HIGA62_notepen_TP_V.jpg)', // 画像URL
+        backgroundImage: 'url(https://www.pakutaso.com/shared/img/thumb/HIGA62_notepen_TP_V.jpg)', 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '100vh', // 画面全体に背景を表示
+        height: '100vh', 
         padding: 4,
         borderRadius: 2,
       }}

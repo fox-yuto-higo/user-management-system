@@ -39,7 +39,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
     }
   };
   return (
-    <Box sx={{ maxWidth: 400, mx: "auto", mt: 4, backgroundColor:"#f5f5c5", padding: 3, borderRadius: 2,}}>
+    <Box sx={{ maxWidth: 400, mx: "auto", mt: 4, }}>
       <Typography variant="h5" gutterBottom>
         新規登録
       </Typography>
